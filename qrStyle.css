@@ -4,6 +4,11 @@
   margin-top:15px;
 }
 
+.myLink {
+  font-family: "TheAntiquaB LT Semi";
+  font-size: 19px;
+}
+
 table {
   overflow: auto;
 }

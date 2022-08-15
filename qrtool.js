@@ -70,10 +70,10 @@ function remRow(buttonId) {
         var table = document.getElementById("codelist");
         var button = document.getElementById(buttonId);
         document.getElementById(button.dataset.id).remove();
-        table.deleteRow(button.parentNode.parentNode.rowIndex);
+        table.deleteRow(button.parentNode.parentNode.rowIndex - 1);
         var spaces = document.getElementById("space").children;
         var len = spaces.length - 1;
-        for (i = len; i > (len - 2); i++) {
+        for (i = len; i > (len - 2); i--) {
             spaces[i].remove();
         }
     }
@@ -197,7 +197,7 @@ function tblEntry(name, url, prev) {
 //Button Funktionalitäten zuweisen
 function buttonFunc() {
 	var table = document.getElementById("codelist");
-	for (i = 1; i < table.rows.length; i++) {
+	for (i = 0; i < table.rows.length; i++) {
 		let row = table.rows[i]
 		for (j = 0; j < row.cells.length; j++) {
 			let col = row.cells[j]

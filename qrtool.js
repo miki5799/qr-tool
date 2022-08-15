@@ -154,6 +154,7 @@ function tblEntry(name, url, prev) {
   var second = document.createElement("a");
   second.href = url;
   second.class = "myLink";
+  secondtd.appendChild(second);
   var third = document.createElement("img");
   third.class = "image";
   third.id = name + "qr";
@@ -176,7 +177,7 @@ function tblEntry(name, url, prev) {
   var sixtd = document.createElement("td");
   sixtd.appendChild(six);
   row.appendChild(first);
-  row.appendChild(second);
+  row.appendChild(secondtd);
   row.appendChild(thirdtd);
   row.appendChild(fourthtd);
   row.appendChild(fifthtd);

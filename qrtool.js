@@ -18,51 +18,6 @@ function pageEdit() {
     }
 }
 
-//Drag and Drop Upload
-/*function dateiauswahl(evt) {
-    evt.stopPropagation();
-    evt.preventDefault();
-    var f = evt.dataTransfer.files[0]; // FileList Objekt
-    if (f) {
-            var r = new FileReader();
-            r.onload = function (e) {
-                var contents = e.target.result;
-                var contents = contents.split('<div id="Redirections">');
-                document.getElementById("content").outerHTML = contents[0];
-                document.getElementById("Redirections").outerHTML = contents[1];
-            }
-            r.readAsText(f);
-        } else {
-            alert("Upload fehlgeschlagen :( ");
-    }
-    var output = [];
-    output.push('<p>', 'Zuletzt geändert: ', f.lastModifiedDate.toLocaleDateString(), '</p>');
-    document.getElementById('list').innerHTML = output.join('');
-}
-
-function handleDragOver(evt) {
-        evt.stopPropagation();
-        evt.preventDefault();
-        evt.dataTransfer.dropEffect = 'copy';
-    }
-
-// Initialisiere Drag&Drop EventListener
-var dropZone = document.getElementById('dropzone');
-dropZone.addEventListener('dragover', handleDragOver, false);
-dropZone.addEventListener('drop', dateiauswahl, false);
-
-//Dropzone ausblenden
-function toggle() {
-    var visible = document.getElementById("dropzone").style.visibility;
-    if (visible == "hidden") {
-        document.getElementById("dropzone").style.visibility = null;
-        document.getElementById("dropbutt").innerHTML = "Ausblenden";
-    } else {
-        document.getElementById("dropzone").style.visibility = "hidden";
-        document.getElementById("dropbutt").innerHTML = "Einblenden";
-    }
-}
-*/
 //Seite von Server laden
 function loadHTML(){
   fetch('https://www.accente.com/sites/default/files/test/qrtool/export.html')
@@ -110,15 +65,18 @@ if (urlSplit[1] == id) {
 
 //QR Code löschen
 function remRow(buttonId) {
-		var table = document.getElementById("codelist");
-		var button = document.getElementById(buttonId);
-		document.getElementById(button.dataset.id).remove();
-		table.deleteRow(button.parentNode.parentNode.rowIndex);
-		var spaces = document.getElementById("space").children;
-		var len = spaces.length -1;
-		for (i = len; i > (len -2); i++) {
-		    spaces[i].remove();
-		        }
+    var text = "Bist du sicher, dass du diesen Code löschen möchtest?\nDas kann nicht rückgängig gemacht werden.";
+    if (confirm(text) == true) {
+        var table = document.getElementById("codelist");
+        var button = document.getElementById(buttonId);
+        document.getElementById(button.dataset.id).remove();
+        table.deleteRow(button.parentNode.parentNode.rowIndex);
+        var spaces = document.getElementById("space").children;
+        var len = spaces.length - 1;
+        for (i = len; i > (len - 2); i++) {
+            spaces[i].remove();
+        }
+    }
 }
 
 function changeURL(buttonId) {
@@ -261,3 +219,48 @@ function buttonFunc() {
 		}
 	}
 }
+//Drag and Drop Upload
+/*function dateiauswahl(evt) {
+    evt.stopPropagation();
+    evt.preventDefault();
+    var f = evt.dataTransfer.files[0]; // FileList Objekt
+    if (f) {
+            var r = new FileReader();
+            r.onload = function (e) {
+                var contents = e.target.result;
+                var contents = contents.split('<div id="Redirections">');
+                document.getElementById("content").outerHTML = contents[0];
+                document.getElementById("Redirections").outerHTML = contents[1];
+            }
+            r.readAsText(f);
+        } else {
+            alert("Upload fehlgeschlagen :( ");
+    }
+    var output = [];
+    output.push('<p>', 'Zuletzt geändert: ', f.lastModifiedDate.toLocaleDateString(), '</p>');
+    document.getElementById('list').innerHTML = output.join('');
+}
+
+function handleDragOver(evt) {
+        evt.stopPropagation();
+        evt.preventDefault();
+        evt.dataTransfer.dropEffect = 'copy';
+    }
+
+// Initialisiere Drag&Drop EventListener
+var dropZone = document.getElementById('dropzone');
+dropZone.addEventListener('dragover', handleDragOver, false);
+dropZone.addEventListener('drop', dateiauswahl, false);
+
+//Dropzone ausblenden
+function toggle() {
+    var visible = document.getElementById("dropzone").style.visibility;
+    if (visible == "hidden") {
+        document.getElementById("dropzone").style.visibility = null;
+        document.getElementById("dropbutt").innerHTML = "Ausblenden";
+    } else {
+        document.getElementById("dropzone").style.visibility = "hidden";
+        document.getElementById("dropbutt").innerHTML = "Einblenden";
+    }
+}
+*/

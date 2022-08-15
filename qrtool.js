@@ -86,11 +86,14 @@ function changeURL(buttonId) {
 }
 
 //Url ändern
-function change(id, newTarget, table) {
+function change(id, newTarget, tableCell) {
+    //Redirect in <div> ändern
 	var myDiv = document.getElementById(id);
 	var myScript = myDiv.children[0];
 	myScript.innerHTML = "redirect(\""+id+"\", \""+newTarget+"\");";
-	table.innerHTML = newTarget;
+    //URL Eintrag in Tabelle ändern
+    var myAnchor = tableCell.children[0];
+	myAnchor.href = newTarget;
 }
 
 //QR Download als .png
@@ -146,9 +149,11 @@ function tblEntry(name, url, prev) {
   var row = document.createElement("tr");
   var first = document.createElement("td");
   first.innerHTML = name;
-  var second = document.createElement("td");
-  second.id = "td"+name;
-  second.innerHTML = url;
+  var secondtd = document.createElement("td");
+  secondtd.id = "td"+name;
+  var second = document.createElement("a");
+  second.href = url;
+  second.class = "myLink";
   var third = document.createElement("img");
   third.class = "image";
   third.id = name + "qr";

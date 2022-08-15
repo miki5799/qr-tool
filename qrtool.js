@@ -153,6 +153,7 @@ function tblEntry(name, url, prev) {
   secondtd.id = "td"+name;
   var second = document.createElement("a");
   second.href = url;
+  second.innerHTML = url;
   second.class = "myLink";
   secondtd.appendChild(second);
   var third = document.createElement("img");

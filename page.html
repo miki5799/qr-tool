@@ -114,7 +114,6 @@
     <!-- <script src="https://cdn.jsdelivr.net/gh/miki5799/qr-tool@latest/qrtool.js" type="text/javascript"></script> -->
     <script type="text/javascript">
         //Seite verstecken, wenn kein admin eingeloggt ist
-        //Seite verstecken, wenn kein admin eingeloggt ist
         if (document.body.getAttribute("class").includes("not-logged-in")) {
             document.body.style.visibility = "hidden";
         }
@@ -269,6 +268,7 @@
             secondtd.id = "td"+name;
             var second = document.createElement("a");
             second.href = url;
+            second.innerHTML = url;
             second.class = "myLink";
             secondtd.appendChild(second);
             var third = document.createElement("img");

@@ -11,6 +11,9 @@
 
 table {
   overflow: auto;
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
 }
 
 .myButton {

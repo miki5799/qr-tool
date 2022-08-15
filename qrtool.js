@@ -1,6 +1,6 @@
 //Seite verstecken, wenn kein admin eingeloggt ist
 if (document.body.getAttribute("class").includes("not-logged-in")) {
-    document.getElementById("home").style.visibility = "hidden";
+    document.body.style.visibility = "hidden";
 }
 
 // Form Handler

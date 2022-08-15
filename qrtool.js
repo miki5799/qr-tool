@@ -65,8 +65,7 @@ if (urlSplit[1] == id) {
 
 //QR Code löschen
 function remRow(buttonId) {
-    //var text = "Bist du sicher, dass du diesen Code löschen möchtest?\nDas kann nicht rückgängig gemacht werden.";
-    var text = "hello";
+    var text = "Bist du sicher, dass du diesen Code löschen möchtest?\nDas kann nicht rückgängig gemacht werden.";
     if (confirm(text) == true) {
         var table = document.getElementById("codelist");
         var button = document.getElementById(buttonId);

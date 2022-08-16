@@ -4,13 +4,45 @@
   margin-top:15px;
 }
 
-.myLink {
-  font-family: "TheAntiquaB LT Semi";
-  font-size: 19px;
+/* Notes */
+.myTable {
+  white-space: nowrap;
 }
-
-table {
-  overflow: auto;
+.myTable table {
+  table-layout: fixed;
+  overflow: hidden;
+  width: 1170px;
+}
+.myTable td, th {
+  overflow: hidden;
+}
+.myTable thead {
+  background-color: #BDA53E;
+  border: none;
+  color: white;
+  text-decoration: none;
+}
+.myTable th {
+  background-color: #bbb;
+}
+.myTable tbody {
+  margin-left: inherit;
+  margin-right: inherit;
+}
+.myTable a {
+  text-transform: none;
+  font-size: 16px;
+  font-family: 'TheAntiquaB LT';
+  border-bottom-width: 0;
+  letter-spacing: normal;
+  text-decoration-line: underline;
+  margin: auto;
+}
+.myTable button {
+  margin-top: 4px;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
 }
 
 .myButton {
@@ -26,10 +58,6 @@ table {
   cursor: pointer;
   font-family: "TheAntiquaB LT";
   box-shadow: rgb(0 0 0 / 20%) 0px 3px 5px -1px, rgb(0 0 0 / 14%) 0px 6px 10px, rgb(0 0 0 / 12%) 0px 1px 18px;
-}
-
-.myTable {
-  white-space: nowrap;
 }
 
 .myTable p {

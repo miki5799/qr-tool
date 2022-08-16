@@ -94,6 +94,7 @@ function change(id, newTarget, tableCell) {
     //URL Eintrag in Tabelle ändern
     var myAnchor = tableCell.children[0];
 	myAnchor.href = newTarget;
+    myAnchor.innerHTML = newTarget;
 }
 
 //QR Download als .png
